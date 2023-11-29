@@ -16,7 +16,9 @@ const userSchema = new Schema({
     dob: String,
     preferences: [{type: String}],
     pushNotification: {type: Boolean, default: false},
-    userType: {type: Number, default: 0}
+    userType: {type: Number, default: 0},
+
+    resetCode: {type: Number}
 })
 
 const User = mongoose.model("User", userSchema);

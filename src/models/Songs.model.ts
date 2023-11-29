@@ -5,6 +5,7 @@ const schema = new Schema({
     file: {type: String, required: true},
     price: {type: Number},
     spotify: String,
+    appleMusic: String,
     artist: {type: Schema.Types.ObjectId, ref: "Artist"}
 },
 {

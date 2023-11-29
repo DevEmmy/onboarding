@@ -1,5 +1,7 @@
 import User from "../models/users.model"
-
+import { Service } from "typedi";
+import "reflect-metadata"
+@Service()
 class UserRepository{
     constructor(private readonly userModel = User){
 
