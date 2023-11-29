@@ -8,7 +8,7 @@ import songRoute from "./src/routes/song-routes"
 import artistsRoute from "./src/routes/artists-routes"
 import swaggerJSDoc from "swagger-jsdoc"
 import swaggerUI from "swagger-ui-express"
-
+require("dotenv").config()
 
 
 const app = express();
@@ -48,7 +48,7 @@ app.use(
 );
      
 // Run MongoDB
-mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/onboarding`)
+mongoose.connect(String(process.env.MONGODB_URI))
 const connection = mongoose.connection
 connection.once('open', ()=>{console.log('Database running Successfully')});
       
