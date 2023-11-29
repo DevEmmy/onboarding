@@ -36,7 +36,8 @@ class UserController {
 
     async update(request: Request, response: Response){
         try{
-            const {id, userObject} = request.body;
+            const {id} = request.params
+            const userObject = request.body;
             let result: IResult = await this.userService.updateProfile(id, userObject)
             success(result, response)
         }
