@@ -48,7 +48,7 @@ app.use(
 );
      
 // Run MongoDB
-mongoose.connect(String(process.env.MONGODB_URI))
+mongoose.connect(String(process.env.DB_URI))
 const connection = mongoose.connection
 connection.once('open', ()=>{console.log('Database running Successfully')});
       
@@ -66,7 +66,6 @@ app.use("/songs", songRoute)
       
 // Run Server
 app.listen(port, () => {
-console.log(`Server running on port ${port}`);
-      
-  });
+    console.log(`Server running on port ${port}`);
+});
         

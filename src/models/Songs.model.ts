@@ -6,7 +6,14 @@ const schema = new Schema({
     price: {type: Number},
     spotify: String,
     appleMusic: String,
-    artist: {type: Schema.Types.ObjectId, ref: "Artist"}
+    artist: {type: Schema.Types.ObjectId, ref: "Artist"},
+    active: {type: Boolean, default: false},
+    cover: {type: String},
+    listens: [{type: Schema.Types.ObjectId, ref: "User"}],
+    genres: [{type: String}],
+    type: {type: String},
+    budget: {type: Number},
+    amountToDisburse: {type: Number},
 },
 {
     timestamps: true
