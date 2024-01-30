@@ -3,8 +3,8 @@ import { Response } from "express";
 
 export interface IResult{
     message: string,
-    status: number,
-    payload: null | object
+    status: number | never | void,
+    payload: null | object | never
 }
 
 export const success = (result: IResult, response: Response)=>{

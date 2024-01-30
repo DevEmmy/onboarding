@@ -45,6 +45,10 @@ class SongController {
             error(result, response)
         }
     }
+
+    async listenToSong(){
+        
+    }
     
 }
 
