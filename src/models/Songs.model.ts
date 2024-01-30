@@ -9,11 +9,12 @@ const schema = new Schema({
     artist: {type: Schema.Types.ObjectId, ref: "Artist"},
     active: {type: Boolean, default: false},
     cover: {type: String},
-    listens: [{type: Schema.Types.ObjectId, ref: "User"}],
+    totalListens: [{type: Schema.Types.ObjectId, ref: "User"}],
     genres: [{type: String}],
     type: {type: String},
     budget: {type: Number},
     amountToDisburse: {type: Number},
+    engagementScore: {type: Number}
 },
 {
     timestamps: true
