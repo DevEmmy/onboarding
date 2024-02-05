@@ -16,9 +16,18 @@ class ArtistServices{
         private readonly userRepository : UserRepository
         ){}
 
+    async create(data: any){
+        let result = await this.repository.save(data)
+        return {
+            payload: result,
+            message: "Artist Created"
+        }
+    }
+
+
     async updateProfile(_id: string, userObject: object){
         try{
-            let result = this.repository.update(_id, userObject)
+            let result = await this.repository.update(_id, userObject)
             return {
                 payload: result,
                 message: "Updated!"
